@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --color-primary-light: #fdf2f2;
+  --color-primary: #8a1c1c;
+  --color-primary-dark: #661010;
+  --color-secondary-light: #f3f7ed;
+  --color-secondary: #4a632b;
+  --color-secondary-dark: #35471d;
+  
+  --font-sans: 'Outfit', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Playfair Display', ui-serif, Georgia, serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans text-gray-700 bg-[#fdfcfa] antialiased;
+  }
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-gray-900 font-semibold;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold transition-all bg-primary text-white shadow-[0_4px_14px_0_rgba(138,28,28,0.39)] hover:shadow-[0_6px_20px_rgba(138,28,28,0.23)] hover:bg-primary-dark hover:-translate-y-1 active:translate-y-0;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center px-6 py-3 rounded-full font-semibold transition-all bg-secondary text-white shadow-[0_4px_14px_0_rgba(74,99,43,0.39)] hover:shadow-[0_6px_20px_rgba(74,99,43,0.23)] hover:bg-secondary-dark hover:-translate-y-1 active:translate-y-0;
+  }
+  .glass-panel {
+    @apply bg-white/70 backdrop-blur-xl border border-white/50 shadow-lg;
+  }
+  .product-card {
+    @apply bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-[0_8px_30px_rgb(0,0,0,0.08)] transition-all duration-300 border border-gray-100 hover:-translate-y-1 relative;
+  }
+}
